@@ -1,0 +1,7 @@
+@utility button {
+	@apply cursor-pointer flex items-center justify-center gap-1 [&>svg]:!text-[16px];
+}
+
+@utility button__contained {
+	@apply px-4 py-1 w-auto rounded-lg;
+}

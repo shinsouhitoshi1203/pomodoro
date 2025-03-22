@@ -1,0 +1,12 @@
+@utility font-heading {
+	@apply font-[700] text-[48px];
+}
+@utility font-text {
+	@apply font-[400] text-[16px];
+}
+@utility font-link {
+	@apply font-[500] text-[16px];
+}
+@utility font-time {
+	@apply font-[700] text-[36px] sm:text-[48px] md:text-[64px] lg:text-[96px] xl:text-[180px];
+}

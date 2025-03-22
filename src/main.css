@@ -1,3 +1,25 @@
 @import "tailwindcss";
 
 @config "./../tailwind.config.cjs";
+
+@theme {
+	--color-primary: #00b050;
+	--color-secondary: #383838;
+	--color-tertiary: #642626;
+	--color-quaternary: #9c3824;
+
+	--color-back: #404040;
+
+	--color-text: #cbcbcb;
+	--color-text-secondary: #ffffff;
+	--color-text-tertiary: #949494;
+}
+@import "./components/rectangle/rectangle.css";
+@import "./components/buttons/button.css";
+
+@import "./assets/css/typography.css";
+
+@import "./assets/css/template.css";
+/* components */
+
+/* ultilities */
