@@ -10,7 +10,9 @@ const useStore = create(
 					short: 5,
 					long: 20
 				}
-			}
+			},
+			appStage: "init", // init | focus | short | long
+			inTimeStatus: {}
 		};
 	})
 );

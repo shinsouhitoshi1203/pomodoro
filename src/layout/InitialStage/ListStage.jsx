@@ -26,7 +26,9 @@ const stageList = [
 const stages = stageList.map(({ stageID }) => stageID);
 
 function ListStage() {
-	const [stage, setStage] = useState(stages[0]);
+	const [stage, setStage] = useState(() => {
+		return store.init.currentIn;
+	});
 	const switchStage = useCallback((st) => {
 		if (stages.includes(st)) {
 			setStage(st);

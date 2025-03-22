@@ -1,7 +1,4 @@
-import { useEffect, useRef } from "react";
-import { register } from "swiper/element/bundle";
-
-register();
+import { memo, useEffect, useRef } from "react";
 import useStore from "../../store/useStore";
 import Duration from "./Duration";
 const stageList = [
@@ -27,15 +24,16 @@ function DurationDisplay() {
 		useStore.subscribe(
 			(state) => state.setup.inStage,
 			(stage) => {
+				let swiper = swiperSlide.current?.swiper;
 				switch (stage) {
 					case "long":
-						swiperSlide.current.swiper.slideTo(2);
+						if (swiper != undefined) swiper.slideTo(2);
 						break;
 					case "short":
-						swiperSlide.current.swiper.slideTo(1);
+						if (swiper != undefined) swiper.slideTo(1);
 						break;
 					case "focus":
-						swiperSlide.current.swiper.slideTo(0);
+						if (swiper != undefined) swiper.slideTo(0);
 						break;
 				}
 			},
@@ -43,6 +41,7 @@ function DurationDisplay() {
 				fireImmediately: true
 			}
 		);
+		swiperSlide.current = null;
 		durationRef.current = true;
 	}, []);
 
@@ -68,4 +67,4 @@ function DurationDisplay() {
 		</div>
 	);
 }
-export default DurationDisplay;
+export default memo(DurationDisplay);

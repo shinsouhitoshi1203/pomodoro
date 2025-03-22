@@ -26,6 +26,13 @@ const store = {
 				}
 			}));
 		}
+	},
+	stage: {
+		// init | focus | short | long
+		set set(stage) {
+			useStore.setState({ appStage: stage });
+			// reset stage...
+		}
 	}
 };
 
