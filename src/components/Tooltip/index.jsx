@@ -6,7 +6,7 @@ function ToolTip({ title, children }) {
 			<Tooltip
 				title={title}
 				classes={{
-					tooltip: "!font-light !font-sans"
+					tooltip: "!font-light !font-sans "
 				}}
 			>
 				{children}

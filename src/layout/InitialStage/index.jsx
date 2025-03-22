@@ -5,7 +5,7 @@ import ListStage from "./ListStage";
 
 function InitialStage() {
 	return (
-		<div className="grid gap-4 items-center w-2/3 sm:w-1/2 lg:w-1/3 mx-auto">
+		<div className="grid gap-4 items-center w-2/3 md:w-1/2  mx-auto">
 			<ListStage />
 			<DurationDisplay />
 			<div>
