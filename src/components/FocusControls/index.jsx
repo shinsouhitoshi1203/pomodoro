@@ -15,8 +15,6 @@ function FocusControls() {
 			(play) => {
 				const currentSession = store.session.current;
 				const status = play[currentSession];
-				// console.log("triggered");
-				// console.log(currentSession, play);
 
 				setIsPlaying(status);
 			},

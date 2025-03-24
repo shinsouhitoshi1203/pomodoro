@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import ContainedButton from "../buttons/ContainedButton";
-import MoreVertIcon from "@mui/icons-material/MoreVert";
 import store from "../../store/store";
+import Options from "./Options";
 
 function InPlaying() {
 	const handlePause = useCallback(() => {
@@ -17,9 +17,7 @@ function InPlaying() {
 			>
 				Pause
 			</ContainedButton>
-			<ContainedButton color="dark" tooltip="More" cls="p-2">
-				<MoreVertIcon />
-			</ContainedButton>
+			<Options />
 		</div>
 	);
 }

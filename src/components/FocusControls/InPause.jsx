@@ -3,6 +3,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import ReplayIcon from "@mui/icons-material/Replay";
 import { useCallback } from "react";
 import store from "../../store/store";
+import Options from "./Options";
 function InPause() {
 	const handlePlay = useCallback(() => {
 		store.session.resume();
@@ -28,9 +29,7 @@ function InPause() {
 			>
 				<ReplayIcon />
 			</ContainedButton>
-			<ContainedButton color="dark" tooltip="More" cls="p-2">
-				<MoreVertIcon />
-			</ContainedButton>
+			<Options />
 		</div>
 	);
 }

@@ -23,3 +23,6 @@
 /* components */
 
 /* ultilities */
+@utility secure-layer {
+	@apply w-screen h-screen fixed inset-0 z-200;
+}

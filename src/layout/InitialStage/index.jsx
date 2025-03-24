@@ -4,8 +4,7 @@ import DurationDisplay from "../../components/DurationDisplay";
 import IncreaseDuration from "./IncreaseDuration";
 import ListStage from "./ListStage";
 import store from "../../store/store";
-import { AnimatePresence, motion } from "motion/react";
-import stageVariant from "../../assets/variant/stageVariant";
+
 import StatusChangeLayout from "../StatusChangeLayout";
 function InitialStage() {
 	const startSessionTrigger = useCallback(() => {

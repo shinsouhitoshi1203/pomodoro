@@ -11,7 +11,8 @@ const useStore = create(
 					focus: 3,
 					short: 1,
 					long: 2
-				}
+				},
+				viewTimeRemaining: false
 			},
 
 			// for work session

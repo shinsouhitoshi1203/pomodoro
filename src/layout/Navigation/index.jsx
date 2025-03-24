@@ -2,14 +2,15 @@ import { motion } from "motion/react";
 
 import RecButton from "../../components/buttons/RecButton";
 import CatchingPokemonIcon from "@mui/icons-material/CatchingPokemon";
-import FocusStatus from "./FocusStatus";
+
 import Time from "./Time";
 import ContrastIcon from "@mui/icons-material/Contrast";
+import FocusStatus from "./FocusStatus";
 function Navigation() {
 	return (
 		<>
 			<motion.nav layout className="navigation z-100 bg-secondary">
-				<div className="container flex items-center mx-auto ">
+				<div className="container flex items-stretch mx-auto ">
 					<RecButton color="white" cls="nav__sitename">
 						<CatchingPokemonIcon fontSize="16" />
 						<span className="font-bold">Pomodoro</span>

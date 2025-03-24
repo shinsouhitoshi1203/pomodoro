@@ -18,7 +18,12 @@ const defaultConfig = {
 			longs: 0
 		},
 		session: "focus",
-		play: false
+		play: {
+			focus: false,
+			short: false,
+			long: false
+		},
+		resetAnimationMessage: { yes: false }
 	}
 };
 
@@ -88,6 +93,10 @@ const store = {
 			return state.status.play;
 		},
 		duration: {
+			get full() {
+				const state = useStore.getState();
+				return state.setup.duration;
+			},
 			get focus() {
 				const state = useStore.getState();
 				return state.setup.duration.focus;
@@ -99,6 +108,22 @@ const store = {
 			get long() {
 				const state = useStore.getState();
 				return state.setup.duration.long;
+			}
+		},
+		show: {
+			get time() {
+				const state = useStore.getState();
+				return state.setup.viewTimeRemaining;
+			},
+			set time(value) {
+				useStore.setState((state) => {
+					return {
+						setup: {
+							...state.setup,
+							viewTimeRemaining: value
+						}
+					};
+				});
 			}
 		}
 	},

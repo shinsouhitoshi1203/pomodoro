@@ -1,10 +1,9 @@
 import { motion } from "motion/react";
 
-import Tomato from "../../components/Tomato";
 import StatusChangeLayout from "../StatusChangeLayout";
+
 import Upcoming from "../../components/Upcoming";
 import FocusControls from "../../components/FocusControls";
-import FocusSession from "./FocusSession";
 import SessionSwitcher from "./SessionSwitcher";
 
 function WorkStage() {
