@@ -6,29 +6,26 @@ import ListStage from "./ListStage";
 import store from "../../store/store";
 import { AnimatePresence, motion } from "motion/react";
 import stageVariant from "../../assets/variant/stageVariant";
+import StatusChangeLayout from "../StatusChangeLayout";
 function InitialStage() {
-	const go = useCallback(() => {
-		store.stage.set = "focus";
+	const startSessionTrigger = useCallback(() => {
+		store.session.startNew();
 	}, []);
 	return (
-		<motion.div
-			layout
-			className="grid gap-4 items-center w-2/3 md:w-1/2  mx-auto"
-			variants={stageVariant}
-			initial="hidden"
-			animate="visible"
-			exit="exit"
-			transition={{ duration: 0.3 }}
-		>
+		<StatusChangeLayout cls="grid gap-4 items-center w-2/3 md:w-1/2  mx-auto">
 			<ListStage />
 			<DurationDisplay />
 			<div>
-				<ContainedButton cls="mx-auto" color="green" onClick={go}>
+				<ContainedButton
+					cls="mx-auto"
+					color="green"
+					onClick={startSessionTrigger}
+				>
 					Start focus session
 				</ContainedButton>
 			</div>
 			<IncreaseDuration />
-		</motion.div>
+		</StatusChangeLayout>
 	);
 }
 export default InitialStage;

@@ -35,7 +35,24 @@ const redPallet = {
 		scale: 0.9
 	}
 };
-
+// animation for dark
+const darkVariant = {
+	default: {
+		backgroundColor: "#383838",
+		color: "#fff"
+	},
+	hover: {
+		backgroundColor: "#949494",
+		color: "#fff"
+	},
+	disabled: {
+		backgroundColor: "#323232",
+		color: "#949494"
+	},
+	tap: {
+		scale: 0.9
+	}
+};
 // transparent white
 const whitePallet = {
 	default: {
@@ -104,5 +121,5 @@ const blueHyperPallet = {
 	}
 };
 
-export { greenPallet, redPallet, whitePallet, transparentPallet };
+export { greenPallet, redPallet, whitePallet, transparentPallet, darkVariant };
 export { blueHyperPallet, whileHyperPallet };

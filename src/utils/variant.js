@@ -3,6 +3,7 @@ import {
 	greenPallet,
 	redPallet,
 	transparentPallet,
+	darkVariant,
 	whileHyperPallet,
 	whitePallet
 } from "../assets/theming/variant";
@@ -15,14 +16,16 @@ function variant(colorString) {
 		case "red":
 			pallet = redPallet;
 			break;
+
 		case "white":
 			pallet = whitePallet;
 			break;
 		case "green":
 			pallet = greenPallet;
 			break;
+		case "plain":
 		default:
-			pallet = transparentPallet;
+			pallet = darkVariant;
 			break;
 	}
 	return pallet;

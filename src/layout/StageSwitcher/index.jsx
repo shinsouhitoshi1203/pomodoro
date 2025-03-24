@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import FocusStage from "../FocusStage";
+import WorkStage from "../WorkStage";
 import InitialStage from "../InitialStage";
 import useStore from "../../store/useStore";
 import { AnimatePresence } from "motion/react";
 
 function StageSwitcher() {
+	// only for init and working session
 	const switchRef = useRef(false);
 	const [loadStage, setLoadStage] = useState("init");
 	useEffect(() => {
@@ -22,7 +23,7 @@ function StageSwitcher() {
 				{loadStage == "init" ? (
 					<InitialStage key={`${loadStage}`} />
 				) : (
-					<FocusStage key={`${loadStage}`} />
+					<WorkStage key={`${loadStage}`} />
 				)}
 			</AnimatePresence>
 		</>
