@@ -10,6 +10,8 @@ import useStore from "../../store/useStore";
 import store from "../../store/store";
 // animation goes here
 function CoffeeIcon() {
+	const hookRel = useRef(1);
+
 	const [isPlaying, setIsPlaying] = useState(() => ({}));
 	const [animator, animate] = useAnimate();
 	const animatorRef = useRef();
@@ -18,7 +20,7 @@ function CoffeeIcon() {
 	const durationRef = useRef(
 		(() => {
 			let duration = store.status.duration.short;
-			return duration; //* 60;
+			return duration * 60;
 		})()
 	);
 	const progressRef = useRef(1);
@@ -27,9 +29,19 @@ function CoffeeIcon() {
 		const progressAmount = 1 - h / 256;
 		progressRef.current = progressAmount;
 	});
-
+	useMotionValueEvent(height, "change", (d) => {
+		// request data to push to the store
+		if (
+			hookRel.current - (1 - d / 256 + 1 / durationRef.current + 0.0001) >
+			0
+		) {
+			hookRel.current = 1 - d / 256;
+			store.animation.progress.short = hookRel.current;
+		}
+	});
 	useMotionValueEvent(height, "animationComplete", () => {
 		height.set(0);
+		hookRel.current = 1;
 		store.session.increase.short();
 		if (animatorRef.current) animatorRef.current.stop();
 

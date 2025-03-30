@@ -1,21 +1,16 @@
 import { memo, useEffect, useRef } from "react";
 import useStore from "../../store/useStore";
 import Duration from "./Duration";
-const stageList = [
-	{},
-	{
-		stageID: "focus",
-		slide: 1
+const creative = {
+	prev: {
+		translate: [0, 0, -800],
+		rotate: [180, 0, 0]
 	},
-	{
-		stageName: "Short break",
-		slide: 2
-	},
-	{
-		stageID: "long",
-		slide: 3
+	next: {
+		translate: [0, 0, -800],
+		rotate: [-180, 0, 0]
 	}
-];
+};
 function DurationDisplay() {
 	const swiperSlide = useRef(null);
 	const durationRef = useRef(false);
@@ -51,8 +46,9 @@ function DurationDisplay() {
 				slides-per-view="1"
 				allow-touch-move="false"
 				className="w-full"
-				effect="flip"
+				effect="creative"
 				ref={swiperSlide}
+				creativeEffect={creative}
 			>
 				<swiper-slide>
 					<Duration stage="focus" />

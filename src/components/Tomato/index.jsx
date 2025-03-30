@@ -11,12 +11,15 @@ import useStore from "../../store/useStore";
 import store from "../../store/store";
 
 function Tomato({}) {
+	// updating progress for the store
+	const hookRel = useRef(1);
+
 	const [scope, animate] = useAnimate();
 	const progressRef = useRef(1);
 	const durationRef = useRef(
 		(() => {
 			let duration = store.status.duration.focus;
-			return duration; //* 60;
+			return duration * 60;
 		})()
 	);
 	const animateControls = useRef();
@@ -26,9 +29,20 @@ function Tomato({}) {
 		const progressAmount = 1 - h / 256;
 		progressRef.current = progressAmount;
 	});
+	useMotionValueEvent(height, "change", (d) => {
+		// request data to push to the store
+		if (
+			hookRel.current - (1 - d / 256 + 1 / durationRef.current + 0.0001) >
+			0
+		) {
+			hookRel.current = 1 - d / 256;
 
+			store.animation.progress.focus = hookRel.current;
+		}
+	});
 	useMotionValueEvent(height, "animationComplete", () => {
 		height.set(0);
+		hookRel.current = 1;
 		store.session.cancelPlayingAll();
 		if (animateControls.current) animateControls.current.stop();
 
@@ -109,6 +123,7 @@ function Tomato({}) {
 						className="tomato size-[256px] absolute bottom-0 overflow-hidden origin-bottom"
 						initial={{ height: 0 }}
 						style={{ height }}
+						transition={{}}
 					>
 						<div className="absolute bottom-0">
 							<Raw />

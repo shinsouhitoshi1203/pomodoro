@@ -12,7 +12,7 @@ const useStore = create(
 					short: 1,
 					long: 2
 				},
-				viewTimeRemaining: false
+				viewTimeRemaining: true
 			},
 
 			// for work session
@@ -30,6 +30,11 @@ const useStore = create(
 					long: false
 				},
 				resetAnimationMessage: { yes: false }
+			},
+			liveTimeProgress: {
+				focus: 0,
+				short: 0,
+				long: 0
 			}
 		};
 	})

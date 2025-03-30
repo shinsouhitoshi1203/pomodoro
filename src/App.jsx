@@ -1,8 +1,7 @@
-import ContainedButton from "./components/buttons/ContainedButton";
-import InitialStage from "./layout/InitialStage";
-import Navigation from "./layout/Navigation";
 import { AnimatePresence, LayoutGroup, motion } from "motion/react";
+import Navigation from "./layout/Navigation";
 import StageSwitcher from "./layout/StageSwitcher";
+import RightTopOptions from "./layout/RightTopOptions";
 
 function App() {
 	return (
@@ -13,8 +12,9 @@ function App() {
 					<motion.div layout className="grow-1 bg-back ">
 						<motion.div
 							layout
-							className="container h-full max-h-[1000px] mx-auto flex items-center justify-center overflow-hidden"
+							className="container h-full max-h-[1000px] mx-auto flex items-center justify-center overflow-hidden relative"
 						>
+							<RightTopOptions />
 							<AnimatePresence>
 								<StageSwitcher />
 							</AnimatePresence>

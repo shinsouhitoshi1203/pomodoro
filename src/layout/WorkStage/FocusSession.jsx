@@ -1,3 +1,4 @@
+import TimeRemainListener from "../../components/TimeRemainListener";
 import Tomato from "../../components/Tomato";
 
 function FocusSession() {
@@ -6,6 +7,7 @@ function FocusSession() {
 	// for the Tomato component.
 	return (
 		<>
+			<TimeRemainListener listenTo="focus" />
 			<Tomato />
 		</>
 	);

@@ -54,7 +54,7 @@ function SessionSwitcher() {
 			ref={swiperRef}
 			duration={300}
 			initial-slide="1"
-			// allow-touch-move="false"
+			allow-touch-move="false"
 		>
 			<swiper-slide className="size-full flex items-center justify-center">
 				<LongBreakSession />

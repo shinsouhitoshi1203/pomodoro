@@ -10,3 +10,6 @@
 @utility font-time {
 	@apply font-[700] text-[36px] sm:text-[48px] md:text-[64px] lg:text-[96px] xl:text-[180px];
 }
+@utility font-remain {
+	@apply font-[500] text-[20px];
+}

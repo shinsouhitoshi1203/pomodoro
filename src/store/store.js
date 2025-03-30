@@ -145,6 +145,46 @@ const store = {
 					resetAnimationMessage: { yes: false }
 				}
 			}));
+		},
+		progress: {
+			get focus() {
+				const state = useStore.getState();
+				return state.liveTimeProgress.focus;
+			},
+			get short() {
+				const state = useStore.getState();
+				return state.liveTimeProgress.short;
+			},
+			get long() {
+				const state = useStore.getState();
+				return state.liveTimeProgress.long;
+			},
+
+			// setters
+			set focus(value) {
+				useStore.setState((state) => ({
+					liveTimeProgress: {
+						...state.liveTimeProgress,
+						focus: value
+					}
+				}));
+			},
+			set short(value) {
+				useStore.setState((state) => ({
+					liveTimeProgress: {
+						...state.liveTimeProgress,
+						short: value
+					}
+				}));
+			},
+			set long(value) {
+				useStore.setState((state) => ({
+					liveTimeProgress: {
+						...state.liveTimeProgress,
+						long: value
+					}
+				}));
+			}
 		}
 	},
 	session: {
