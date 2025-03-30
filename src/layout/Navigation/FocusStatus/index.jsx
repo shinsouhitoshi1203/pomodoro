@@ -22,6 +22,7 @@ function FocusStatus() {
 			isDoubled = true;
 		};
 	}, []);
+
 	return (
 		<>
 			<RecShape color="green">

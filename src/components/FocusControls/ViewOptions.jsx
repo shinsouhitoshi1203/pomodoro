@@ -28,7 +28,7 @@ function ViewOption({ toggle }) {
 					}}
 				></motion.div>
 				<motion.div
-					className="absolute bottom-0 border-4 border-secondary bg-secondary rounded-xl w-full z-211"
+					className="absolute bottom-0 border-4 border-secondary bg-secondary rounded-xl w-full z-91"
 					initial={{ translateY: 100 }}
 					animate={{ translateY: 0 }}
 					exit={{ opacity: 0 }}

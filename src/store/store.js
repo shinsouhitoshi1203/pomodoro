@@ -67,6 +67,10 @@ const store = {
 			useStore.setState({ appStage: stage });
 			// reset stage...
 		},
+		get current() {
+			const state = useStore.getState();
+			return state.appStage;
+		},
 		set setSession(stage) {
 			useStore.setState((state) => ({
 				status: {
@@ -262,6 +266,29 @@ const store = {
 			long() {
 				this.setIncrease("longs");
 			}
+		}
+	},
+
+	app: {
+		set topBar(value) {
+			useStore.setState((state) => ({
+				app: {
+					...state.app,
+					topBar: value
+				}
+			}));
+		},
+		get topBar() {
+			const state = useStore.getState();
+			return state.app.topBar;
+		},
+		toggleTopBar() {
+			useStore.setState((state) => ({
+				app: {
+					...state.app,
+					topBar: !state.app.topBar
+				}
+			}));
 		}
 	}
 };

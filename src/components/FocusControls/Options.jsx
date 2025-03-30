@@ -19,7 +19,7 @@ function Options() {
 			<ContainedButton
 				color="dark"
 				tooltip="More"
-				cls="p-2 relative z-211"
+				cls="p-2 relative z-91"
 				onClick={toggle}
 			>
 				<MoreVertIcon />

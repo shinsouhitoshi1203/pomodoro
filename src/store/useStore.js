@@ -14,7 +14,6 @@ const useStore = create(
 				},
 				viewTimeRemaining: true
 			},
-
 			// for work session
 			appStage: "init", // init | focus | short | long
 			status: {
@@ -35,6 +34,12 @@ const useStore = create(
 				focus: 0,
 				short: 0,
 				long: 0
+			},
+
+			app: {
+				theme: "dark",
+				showSettings: false,
+				topBar: true
 			}
 		};
 	})
