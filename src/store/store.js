@@ -7,7 +7,7 @@ const defaultConfig = {
 		duration: {
 			focus: 25,
 			short: 5,
-			long: 20
+			long: 15
 		}
 	},
 	appStage: "init",

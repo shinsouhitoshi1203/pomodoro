@@ -1,6 +1,10 @@
 import { memo, useEffect, useRef } from "react";
 import useStore from "../../store/useStore";
 import Duration from "./Duration";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-creative";
+import { EffectCreative } from "swiper/modules";
 const creative = {
 	prev: {
 		translate: [0, 0, -800],
@@ -42,24 +46,25 @@ function DurationDisplay() {
 
 	return (
 		<div className="my-4 w-full overflow-hidden">
-			<swiper-container
-				slides-per-view="1"
-				allow-touch-move="false"
+			<Swiper
+				slidesPerView={1}
+				allowTouchMove={false}
+				modules={[EffectCreative]}
 				className="w-full"
 				effect="creative"
 				ref={swiperSlide}
 				creativeEffect={creative}
 			>
-				<swiper-slide>
+				<SwiperSlide>
 					<Duration stage="focus" />
-				</swiper-slide>
-				<swiper-slide>
+				</SwiperSlide>
+				<SwiperSlide>
 					<Duration stage="short" />
-				</swiper-slide>
-				<swiper-slide>
+				</SwiperSlide>
+				<SwiperSlide>
 					<Duration stage="long" />
-				</swiper-slide>
-			</swiper-container>
+				</SwiperSlide>
+			</Swiper>
 		</div>
 	);
 }

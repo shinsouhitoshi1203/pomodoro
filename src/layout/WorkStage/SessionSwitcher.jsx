@@ -4,6 +4,10 @@ import ShortBreakSession from "./ShortBreakSession";
 import useStore from "../../store/useStore";
 import LongBreakSession from "./LongBreakSession";
 
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-creative";
+import { EffectFade, EffectCreative } from "swiper/modules";
 const creative = {
 	prev: {
 		translate: [0, 0, -800],
@@ -46,26 +50,28 @@ function SessionSwitcher() {
 	}, []);
 
 	return (
-		<swiper-container
-			slides-per-view="1"
+		<Swiper
+			slidesPerView="1"
+			modules={[EffectCreative]}
 			effect="creative"
 			creativeEffect={creative}
 			className="size-full flex items-center"
 			ref={swiperRef}
-			duration={300}
-			initial-slide="1"
-			allow-touch-move="false"
+			initialSlide={1}
+			allowTouchMove={false}
 		>
-			<swiper-slide className="size-full flex items-center justify-center">
+			<SwiperSlide className="size-full flex items-center justify-center">
 				<LongBreakSession />
-			</swiper-slide>
-			<swiper-slide className="size-full flex items-center ">
+			</SwiperSlide>
+			<SwiperSlide className="size-full flex items-center ">
 				<FocusSession />
-			</swiper-slide>
-			<swiper-slide className="size-full flex items-center justify-center">
+			</SwiperSlide>
+			<SwiperSlide className="size-full flex items-center justify-center">
 				<ShortBreakSession />
-			</swiper-slide>
-		</swiper-container>
+			</SwiperSlide>
+		</Swiper>
 	);
 }
 export default SessionSwitcher;
+/*
+ */

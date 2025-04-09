@@ -8,9 +8,9 @@ const useStore = create(
 				inStage: "focus",
 				duration: {
 					// in minutes
-					focus: 25,
-					short: 5,
-					long: 10
+					focus: 3 / 60,
+					short: 1 / 60,
+					long: 2 / 60
 				},
 				viewTimeRemaining: true
 			},

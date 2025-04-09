@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { useCallback, useEffect, useReducer, useRef, useState } from "react";
 import useStore from "../../store/useStore";
 import store from "../../store/store";
-import TimeRemainReducer from "../../reducers/timeRemainReducer";
+import TimeRemainReducer from "../../reducers/TimeRemainReducer";
 import initialTimeRemainState from "../../reducers/initialTimeRemainState";
 import renderDispatchRequest from "../../reducers/TimeRemainActions";
 function TimeRemainListener({ listenTo }) {
