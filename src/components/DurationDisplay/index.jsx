@@ -17,22 +17,21 @@ const creative = {
 };
 function DurationDisplay() {
 	const swiperSlide = useRef(null);
-	const durationRef = useRef(false);
 	useEffect(() => {
-		if (durationRef.current) return;
+		let isDoubled = false;
 		useStore.subscribe(
 			(state) => state.setup.inStage,
 			(stage) => {
-				let swiper = swiperSlide.current?.swiper;
+				if (isDoubled) return;
 				switch (stage) {
 					case "long":
-						if (swiper != undefined) swiper.slideTo(2);
+						swiperSlide.current?.swiper.slideTo(2);
 						break;
 					case "short":
-						if (swiper != undefined) swiper.slideTo(1);
+						swiperSlide.current?.swiper.slideTo(1);
 						break;
 					case "focus":
-						if (swiper != undefined) swiper.slideTo(0);
+						swiperSlide.current?.swiper.slideTo(0);
 						break;
 				}
 			},
@@ -40,14 +39,15 @@ function DurationDisplay() {
 				fireImmediately: true
 			}
 		);
-		swiperSlide.current = null;
-		durationRef.current = true;
+		return () => {
+			isDoubled = true;
+		};
 	}, []);
 
 	return (
 		<div className="my-4 w-full overflow-hidden">
 			<Swiper
-				slidesPerView={1}
+				slidesPerView="1"
 				allowTouchMove={false}
 				modules={[EffectCreative]}
 				className="w-full"
